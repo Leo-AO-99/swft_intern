@@ -1,0 +1,35 @@
+{
+  "name": "cross_ex_arb",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "0.30.1",
+    "@metaplex-foundation/mpl-token-metadata": "^2.13.0",
+    "@solana/spl-token": "0.4.12",
+    "@solana/web3.js": "^1.98.0",
+    "@triton-one/yellowstone-grpc": "2.0.0",
+    "bn.js": "^5.2.1",
+    "borsh": "^2.0.0",
+    "bs58": "^6.0.0",
+    "decimal.js": "^10.5.0",
+    "toml": "^3.0.0",
+    "winston": "^3.17.0",
+    "@meteora-ag/dlmm": "^1.2.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/bn.js": "^5.1.6",
+    "@types/node": "^22.13.5",
+    "typescript": "^5.7.3"
+  }
+}
