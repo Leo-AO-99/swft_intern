@@ -5,9 +5,9 @@ export class PoolBase {
     conn: Connection;
     pool_ids: string[];
     price_cache: Map<string, number>;
-    on_update?: (pool_id: string, price: number) => void;
+    on_update?: (pool_id: string, price: number) => Promise<void>;
 
-    constructor(pool_ids: string[], on_update?: (pool_id: string, price: number) => void) {
+    constructor(pool_ids: string[], on_update?: (pool_id: string, price: number) => Promise<void>) {
         this.conn = new Connection("https://api.mainnet-beta.solana.com", "processed");
         this.pool_ids = pool_ids;
         this.price_cache = new Map<string, number>();
@@ -39,7 +39,7 @@ export class PoolBase {
                 const price = this.parse_price(dataBuffer, pool_id);
                 this.price_cache.set(pool_id, price);
                 if (this.on_update) {
-                    this.on_update(pool_id, price);
+                    await this.on_update(pool_id, price);
                 }
             },
         )

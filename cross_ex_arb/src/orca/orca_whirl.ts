@@ -7,7 +7,7 @@ export class OrcaWhirl extends PoolBase {
     _name: string = "OrcaWhirl";
     mint_decimal: Map<string, [number, number]>;
 
-    constructor(pool_ids: string[], on_update?: (pool_id: string, price: number) => void) {
+    constructor(pool_ids: string[], on_update?: (pool_id: string, price: number) => Promise<void>) {
         super(pool_ids, on_update);
         this._name = "OrcaWhirl";
         this.mint_decimal = new Map<string, [number, number]>();

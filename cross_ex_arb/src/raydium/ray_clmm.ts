@@ -7,7 +7,7 @@ import { PoolBase } from "../base/pool_base.js";
 export class RayCLMM extends PoolBase {
     _name: string = "RayCLMM";
     mint_decimal: Map<string, [number, number]>;
-    constructor(pool_ids: string[], on_update?: (pool_id: string, price: number) => void) {
+    constructor(pool_ids: string[], on_update?: (pool_id: string, price: number) => Promise<void>) {
         super(pool_ids, on_update);
         this.mint_decimal = new Map<string, [number, number]>();
         this.mint_decimal.set("8sLbNZoA1cfnvMJLPfp98ZLAnFSYCFApfJKMbiXNLwxj", [9, 6])
